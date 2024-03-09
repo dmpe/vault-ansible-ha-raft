@@ -1,0 +1,14 @@
+---
+- hosts: all
+  gather_facts: True
+  become: true
+  vars:
+    vault_cluster_disable: True
+    vault_log_level: debug
+    vault_service_restart: false
+    vault_version: 1.15.6
+    vault_install_remotely: true
+    vault_service_reload: false
+    vault_backend: raft
+  roles:
+    - ansible-community.ansible-vault
